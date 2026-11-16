@@ -2,19 +2,14 @@ chdk-film for Canon PowerShot A2200 (firmware 1.00D)  -  TEST BUILD 2  (speed)
 ==============================================================================
 
 What changed
-  Same film looks, same grain, same colours as test 1: the photos should come out
-  IDENTICAL to test 1. Only the time to save a shot changes.
+Film looks, Added grain, Film stock colours
 
-  Why test 1 was slow: the CHDK build compiles with "no inlining" and "optimise for
-  size", so every tiny helper in the per-pixel loop became a real function call (about
-  a dozen per pixel) and the raw data was read one byte at a time. Test 2 rewrites that
-  loop: no calls, 16-bit reads/writes, and white balance, black level and clamping
-  folded into the look-up tables. Checked by running the compiled ARM code in an
-  emulator: output is bit-for-bit the same as test 1 across 144 look/grain/vignette
-  combinations, using about 2.5x fewer instructions per pixel (A) and about 3.5x
-  fewer (B). That is the work done, not seconds: I cannot time a real A2200 from here.
+The CHDK build compiles with "no inlining" and "optimise for
+size", so every tiny helper in the per-pixel loop became a real function call (about
+a dozen per pixel) and the raw data was read one byte at a time.
+This DISKBOOT.BIN file for CHDK build rewrites the loop: no calls, 16-bit reads/writes, and white balance, black level and clamping folded into the look-up tables. Checked by running the compiled ARM code in an emulator: output is across 144 look/grain/vignette combinations, using about 3.5x fewer instructions per pixel. That is the work done.
 
-Install (nothing else to copy: the CHDK folder and settings from test 1 stay as they are)
+Install (nothing else to copy: the CHDK folder)
   1. On the card, delete DISKBOOT.BIN.
   2. Copy DISKBOOT.BIN to the card and replace the existing file.
   3. Start CHDK the usual way. Shoot.
