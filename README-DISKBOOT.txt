@@ -14,15 +14,10 @@ What changed
   combinations, using about 2.5x fewer instructions per pixel (A) and about 3.5x
   fewer (B). That is the work done, not seconds: I cannot time a real A2200 from here.
 
-Two versions, because I cannot tell which the camera prefers
-  DISKBOOT_A_THUMB.BIN   compact code (like the rest of CHDK)
-  DISKBOOT_B_ARM.BIN     fewer instructions but bigger code
-  Which is faster depends on how the camera's CPU caches code, so please try both.
-
 Install (nothing else to copy: the CHDK folder and settings from test 1 stay as they are)
   1. On the card, delete DISKBOOT.BIN.
-  2. Copy DISKBOOT_A_THUMB.BIN to the card and rename it to  DISKBOOT.BIN
-  3. Start CHDK the usual way. Shoot. Then repeat with DISKBOOT_B_ARM.BIN.
+  2. Copy DISKBOOT.BIN to the card and replace the existing file.
+  3. Start CHDK the usual way. Shoot.
 
 The develop time is now shown for you
   After each shot, the badge at the top of the shooting screen shows how long it took,
@@ -30,16 +25,15 @@ The develop time is now shown for you
   and you are not half-pressing the shutter.
 
 Test list - please send back
-  For BOTH versions, with the same scene and the same settings, shoot Portra 400,
-  Expired Lomo and Tri-X 400 and note the time on the badge for each:
-        version A:  Portra ___ s   Lomo ___ s   Tri-X ___ s
-        version B:  Portra ___ s   Lomo ___ s   Tri-X ___ s
-  Also tell me:
-   - Does the look match test 1 (same colours, grain, vignette)? It should.
-   - Any freeze, reboot or odd photo? (If B misbehaves, A is the safe one.)
-   - Roughly what was test 1's time for Portra, for comparison?
+  With the same scene and the same settings, shoot Portra 400, Expired Lomo and Tri-X 400 and note the time on the badge for each to test the film sims for yourself:
+        Mod:  Portra ___ s   Lomo ___ s   Tri-X ___ s
+  Also check:
+   - Any freeze, reboot or odd photo?
+   - Roughly what was test's time for Portra, Expired Lomo and Tri-X 400, for comparison mine was 4.7s for all the film sims.
 
 If something goes wrong: power off, remove the card or unlock it, and the camera is
-stock again. To go back to test 1, put its DISKBOOT.BIN back on the card.
+stock again. To go back default, put its DISKBOOT.BIN (original CHDK) back on the card.
 
-SHA-256 (first 16 hex):  A 4c59e9825011d67f   B b4902595fdf6c7c7
+Hope this helps, You take care and Happy shootingz.
+
+-Ro
